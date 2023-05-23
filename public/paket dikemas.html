@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--datatables-->
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>PAKET DIKEMAS</title>
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined"><img src="images/sisteh.png" alt="Icon" width="160" height="60"></span>
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="index.html">
+                        <span class="material-icons-outlined"><img src="images/dashboard.png" alt="Icon" width="25"
+                height="25"></span> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket diterima.html">
+                        <span class="material-icons-outlined"><img src="images/received.png" alt="Icon" width="25"
+                height="25"></span> Paket Diterima
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket disimpan.html">
+                        <span class="material-icons-outlined"><img src="images/storage.png" alt="Icon" width="25"
+                height="25"></span> Paket Disimpan
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket dikemas.html">
+                        <span class="material-icons-outlined"><img src="images/package.png" alt="Icon" width="25"
+                height="25"></span> Paket Dikemas
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span class="material-icons-outlined"><img src="images/logout.png" alt="Icon" width="25" height="25"></span> Keluar Aplikasi
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+        <main class="main-container">
+            <div class="main-title">
+                <center>
+                    <p class="font-weight-bold">DATA PENGEMASAN PAKET DAUN TEH</p>
+                </center>
+            </div>
+            <div class="main-cards">
+                <br>
+                <br>
+                <table id="data_pengemasan" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID Paket</th>
+                            <th>Nama Petugas Pengemasan</th>
+                            <th>Tanggal Pengemasan</th>
+                            <th>Berat Saat Pengemasan (Ons)</th>
+                            <th>Ubah</th>
+                            <th>Hapus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                    $conn = mysqli_connect("localhost", "root", "", "pengemasan_db"); //
+                    $q = mysqli_query($conn, "SELECT * FROM data_pengemasan"); //
+                    $no = 0;
+                    while ($data = mysqli_fetch_array($q)) { //
+                      $no++;
+                      ?>
+                            <tr>
+                                <td>
+                                    <?= $no ?>
+                                </td>
+                                <td>
+                                    <?= $data['ID_Paket'] ?>
+                                </td>
+                                <td>
+                                    <?= $data['Petugas_Pengemasan'] ?>
+                                </td>
+                                <td>
+                                    <?= $data['Tanggal_Pengemasan'] ?>
+                                </td>
+                                <td>
+                                    <?= $data['Berat_Pengemasan'] ?>
+                                </td>
+                                <td>Ubah</td>
+                                <td>Hapus
+                                    <td>
+                            </tr>
+                            <?php } ?>
+                    </tbody>
+                </table>
+                <script>
+                    $(document).ready(function() {
+                        $('#data_pengemasan').DataTable();
+                    });
+                </script>
+            </div>
+    </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SISTEH Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="src/index.css">
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-ic2ons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined"><img src="./images/logo.png" alt="Icon"  width="`160" height="60"></span>
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="index.html">
+                        <span class="material-icons-outlined"><img src="./images/dashboard.png" alt="Icon"  width="25" height="25"></span> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket diterima.html">
+                        <span class="material-icons-outlined"><img src="/images/received.png" alt="Icon"  width="25" height="25"></span> Paket Diterima
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket_disimpan.html">
+                        <span class="material-icons-outlined"><img src="./images/storage.png" alt="Icon"  width="25" height="25"></span> Paket Disimpan
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="paket dikemas.html">
+                        <span class="material-icons-outlined"><img src="./images/package.png" alt="Icon"  width="25" height="25"></span> Paket Dikemas
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined"><img src="./images/logout.png" alt="Icon"  width="25" height="25"></span> Keluar Aplikasi
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Realtime Dashboard of SISTEH -->
+        <main class="main-container" width="950px" height="500px">
+            <div class="main-title">
+                <p class="font-weight-bold">REALTIME DASHBOARD</p>
+            </div>
+
+            <div class="main-cards">
+
+                <main class="container">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">Jumlah Paket Daun Teh</p>
+                            <span class="material-icons-outlined text-green">inventory_2</span>
+                        </div>
+                        <span class="text-primary font-weight-bold">79</span>
+                    </div>
+                    <br/>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">Jumlah Paket Daun Teh Kualitas Buruk</p>
+                            <span class="material-icons-outlined text-orange">inventory_2</span>
+                        </div>
+                        <span class="text-primary font-weight-bold">83</span>
+                    </div>
+
+                </main>
+                <main class="container">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">Jumlah Paket Daun Teh Kualitas Baik</p>
+                            <span class="material-icons-outlined text-blue">inventory_2</span>
+                        </div>
+                        <span class="text-primary font-weight-bold">249</span>
+                    </div>
+                </main>
+            </div>
+
+            <div class="main-cards">
+                <main class="container">
+                    <div class="main-cards">
+                        <!-- chart veu js -->
+                        <div class="card" id="app">
+                        </div>
+                        <!-- chart veu js -->
+
+                    </div>
+                </main>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="main-cards">
+                <main class="content">
+                    <div class="card">
+                        <div class="card-inner">
+                            <iframe title="Grafik Perkembangan Intensitas Cahaya" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2110883/charts/3?bgcolor=%2300FFFF&color=%23000000&dynamic=true&results=60&title=Intensitas+Cahaya+%28%25%29&type=line"></iframe>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <iframe title="Grafik Perkembangan Suhu" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2110883/charts/1?bgcolor=%23FFD700&color=%23000000&dynamic=true&results=60&title=Suhu+Ruang+Penyimpanan+%28%2AC%29&type=line"></iframe>
+                        </div>
+                    </div>
+                </main>
+                <main class="content">
+                    <div class="card">
+                        <div class="card-inner">
+                            <iframe title="Grafik Perkembangan Kelembapan" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2110883/charts/2?bgcolor=%23ADFF2F&color=%23000000&dynamic=true&results=60&title=Kelembapan+Ruang+Penyimpanan+%28%25%29&type=line"></iframe>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <!-- Analytics Dashboard of SISTEH   -->
+            <div class="main-title ">
+                <p class="font-weight-bold ">ANALYTICS DASHBOARD</p>
+            </div>
+
+            <div class="main-cards ">
+                <main class="container">
+                    <div class="card ">
+                        <div class="card-inner ">
+                            <iframe title="Grafik Perkembangan Intensitas Cahaya " width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/apps/matlab_visualizations/507740 "></iframe>
+                        </div>
+                    </div>
+                    <br> <br>
+                    <div class="card ">
+                        <div class="card-inner ">
+                            <iframe title="Grafik Perkembangan Suhu " width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/apps/matlab_visualizations/507720 "></iframe>
+                        </div>
+                    </div>
+                </main>
+                <main class="content">
+                    <div class="card ">
+                        <div class="card-inner ">
+                            <iframe title="Grafik Perbandingan Kelembapan " width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/apps/matlab_visualizations/507722 "></iframe>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="card ">
+                        <div class="card-inner ">
+                            <iframe title="Status Kelembapan " width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/apps/matlab_visualizations/508352 "></iframe>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="main-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <iframe title="Status Suhu" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/apps/matlab_visualizations/507741"></iframe>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <iframe title="Status Kelembapan" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/apps/matlab_visualizations/508352"></iframe>
+                    </div>
+                </div>
+
+
+        </main>
+
+
+        <!-- End Main -->
+</body>
+
+</html>
